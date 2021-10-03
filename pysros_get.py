@@ -30,15 +30,20 @@ if __name__ == "__main__":
     ## Timestamp: completed
     t2 = datetime.datetime.now()
 
-    ## Results
+    ## Printing results
     tl = os.get_terminal_size()
     print(f"{'=' * tl.columns}\nCompleted in {t2 -t1}\n{'=' * tl.columns}\n")
 
+    ## Printing collected data
     print(results)
     print(results["admin-state"])
+
+    ## Validating data type
+    print(isinstance(results["admin-state"], str))
+    print(results["admin-state"] == "enable")
+
+    # Coverting data type and re-validating it again
     print(isinstance(str(results["admin-state"]), str))
     print(str(results["admin-state"]) == "enable")
-    print(results["slot-number"])
-    print(isinstance(results["slot-number"], int))
 
     print(f"\n{'=' * tl.columns}\n")
