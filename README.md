@@ -7,7 +7,7 @@ This repository is in active development and can frequently change.
 ## Current Outline
 | Script | Purpose |
 | ------ | ------- |
-| [pysros_get.py](https://github.com/karneliuk-com/nokia-sros-automation/pysros_get.py) | Basic connection to Nokia SR OS with pySROS library |
+| [pysros_get.py](https://github.com/karneliuk-com/nokia-sros-automation/blob/main/pysros_get.py) | Basic connection to Nokia SR OS with pySROS library |
 
 ## Need Help?
 [Contact us](https://karneliuk.com/contact/) with your request and we will find the most suitable solution for you.
