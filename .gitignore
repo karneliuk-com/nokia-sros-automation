@@ -1,0 +1,4 @@
+gnmi.py
+**/venv/
+**/__pycache__/
+.env
