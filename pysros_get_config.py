@@ -42,7 +42,7 @@ if __name__ == "__main__":
     print(isinstance(results["admin-state"], str))
     print(results["admin-state"] == "enable")
 
-    # Coverting data type and re-validating it again
+    # Converting data type and re-validating it again
     print(isinstance(str(results["admin-state"]), str))
     print(str(results["admin-state"]) == "enable")
 
