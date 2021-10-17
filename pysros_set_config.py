@@ -17,6 +17,9 @@ if __name__ == "__main__":
             "password": os.getenv("NOKIA_PASS")
          }
 
+    ## Get path
+    path = '/nokia-conf:configure/card[slot-number="1"]'
+
     ## Timestamp: started
     t1 = datetime.datetime.now()
 
@@ -24,7 +27,16 @@ if __name__ == "__main__":
     connect_obj = connect(host=host["ip_address"], username=host["username"],
                           password=host["password"])
 
-    results = connect_obj.running.get("/nokia-state:state/card[slot-number=1]")
+    r1 = connect_obj.running.get(path="/openconfig-interfaces:interfaces/interface[name=\"loopback\"]")
+
+    # Setting a value (YANG leaf or list-leaf type )
+    r2 = connect_obj.candidate.set(path="/openconfig-interfaces:interfaces/interface[name=\"loopback\"]/config/description", value="test configuration")
+
+    # Setting a nested value (YANG container or list)
+    r3 = connect_obj.candidate.set(path="/openconfig-interfaces:interfaces/interface[name=\"loopback\"]/subinterfaces/subinterface", value={1: {"config": {"index": 1, "description": "another test", "enabled": True}}})
+
+    r4 = connect_obj.running.get(path="/openconfig-interfaces:interfaces/interface[name=\"loopback\"]")
+
     connect_obj.disconnect()
 
     ## Timestamp: completed
@@ -35,6 +47,9 @@ if __name__ == "__main__":
     print(f"{'=' * tl.columns}\nCompleted in {t2 -t1}\n{'=' * tl.columns}\n")
 
     ## Printing collected data
-    print(results)
+    print(r1)
+    print(r2)
+    print(r3)
+    print(r4)
 
     print(f"\n{'=' * tl.columns}\n")

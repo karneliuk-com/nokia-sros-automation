@@ -10,6 +10,7 @@ This repository is in active development and can frequently change.
 | [pysros_get_config.py](https://github.com/karneliuk-com/nokia-sros-automation/blob/main/pysros_get_config.py) | Collection configuration from Nokia SR OS using pySROS library |
 | [pysros_get_state.py](https://github.com/karneliuk-com/nokia-sros-automation/blob/main/pysros_get_state.py) | Collection operational data from Nokia SR OS using pySROS library |
 | [pysros_get_tree.py](https://github.com/karneliuk-com/nokia-sros-automation/blob/main/pysros_get_tree.py) | Collection operational data from Nokia SR OS using pySROS library and printing it in aformat of YANG tree with set values |
+| [pysros_set_config.py](https://github.com/karneliuk-com/nokia-sros-automation/blob/main/pysros_set_config.py) | Confguration of Nokia SR OS router using pySROS library. Examples for Leaf (key-value pair) and Container (dictionary) are provided |
 
 ## Need Help?
 [Contact us](https://karneliuk.com/contact/) with your request and we will find the most suitable solution for you.
