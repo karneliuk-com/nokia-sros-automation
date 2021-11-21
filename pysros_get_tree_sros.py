@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
         ## Collect the information
         connect_obj = connect()             
-        results = connect_obj.running.get(path)
+        results = connect_obj.running.get("/" + path_str)
         connect_obj.disconnect()
 
         ## Print results
@@ -32,4 +32,4 @@ if __name__ == "__main__":
         t2 = utime.ticks_ms()
 
         ## Print time
-        print("\n\nCompleted in {} ms".format(utime.ticks_diff(t2, t1)))  
+        print("\nCompleted in {} ms".format(utime.ticks_diff(t2, t1)))  
