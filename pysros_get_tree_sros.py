@@ -1,6 +1,6 @@
 # Modules
 import sys
-import utime
+import time
 from pysros.management import connect
 from pysros.pprint import printTree
 
@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
     for path_str in input_args_list:
         ## Get the timesamp in the beginning of the command
-        t1 = utime.ticks_ms()
+        t1 = time.ticks_ms()
 
         ## Collect the information
         full_xpath_str = "/" + path_str
@@ -30,7 +30,7 @@ if __name__ == "__main__":
         printTree(results)
 
         ## Get the timesamp at the end
-        t2 = utime.ticks_ms()
+        t2 = time.ticks_ms()
 
         ## Print time
-        print("\nCompleted in {} ms".format(utime.ticks_diff(t2, t1)))  
+        print("\nCompleted in {} ms".format(time.ticks_diff(t2, t1)))  
