@@ -9,20 +9,27 @@ path = '/nokia-conf:configure/card[slot-number="1"]'
 
 # Body
 if __name__ == "__main__":
-    ## Get the timesamp in the beginning of the command
-    t1 = utime.ticks_ms()
+    ## Check input args
+    input_args_list = sys.argv
+    del input_args_list[0]
 
-    ## Collect the information
-    connect_obj = connect()             
-    results = connect_obj.running.get(path)
-    connect_obj.disconnect()
+    input_args_list = [path] if len(input_args_list) == 0 else input_args_list
 
-    ## Print results
-    print("Reuqested path: \n{}\n\nResult:".format(path))   
-    printTree(results)
+    for path_str in input_args_list:
+        ## Get the timesamp in the beginning of the command
+        t1 = utime.ticks_ms()
 
-    ## Get the timesamp at the end
-    t2 = utime.ticks_ms()
+        ## Collect the information
+        connect_obj = connect()             
+        results = connect_obj.running.get(path)
+        connect_obj.disconnect()
 
-    ## Print time
-    print("\n\nCompleted in {} ms".format(utime.ticks_diff(t2, t1)))  
+        ## Print results
+        print("Reuqested path: \n{}\n\nResult:".format(path))   
+        printTree(results)
+
+        ## Get the timesamp at the end
+        t2 = utime.ticks_ms()
+
+        ## Print time
+        print("\n\nCompleted in {} ms".format(utime.ticks_diff(t2, t1)))  
