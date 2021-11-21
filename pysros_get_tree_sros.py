@@ -25,7 +25,7 @@ if __name__ == "__main__":
         connect_obj.disconnect()
 
         ## Print results
-        print("Reuqested path: \n{}\n\nResult:".format(path))   
+        print("Reuqested path: \n{}\n\nResult:".format(path_str))   
         printTree(results)
 
         ## Get the timesamp at the end
