@@ -20,12 +20,13 @@ if __name__ == "__main__":
         t1 = utime.ticks_ms()
 
         ## Collect the information
+        full_xpath_str = "/" + path_str
         connect_obj = connect()             
-        results = connect_obj.running.get("/" + path_str)
+        results = connect_obj.running.get(full_xpath_str)
         connect_obj.disconnect()
 
         ## Print results
-        print("Reuqested path: \n{}\n\nResult:".format(path_str))   
+        print("Reuqested path: \n{}\n\nResult:".format(full_xpath_str))   
         printTree(results)
 
         ## Get the timesamp at the end
