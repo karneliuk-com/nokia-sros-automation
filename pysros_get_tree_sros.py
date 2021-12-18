@@ -5,7 +5,7 @@ from pysros.management import connect
 from pysros.pprint import printTree
 
 # Variables
-path = 'nokia-conf:configure/card[slot-number="1"]'
+path = '/nokia-conf:configure/card[slot-number="1"]'
 
 # Body
 if __name__ == "__main__":
